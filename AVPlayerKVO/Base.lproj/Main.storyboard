@@ -38,30 +38,38 @@
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b0-J0-yjb">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Pause"/>
+                                <state key="normal" title="Play"/>
                                 <connections>
-                                    <action selector="pauseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wtj-3O-YhF"/>
+                                    <action selector="pauseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tce-0h-S3R"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTf-OH-2Ps">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="gbX-Y4-jzu" firstAttribute="top" secondItem="uTf-OH-2Ps" secondAttribute="bottom" constant="15" id="0DL-NT-gbY"/>
                             <constraint firstItem="1b0-J0-yjb" firstAttribute="leading" secondItem="gbX-Y4-jzu" secondAttribute="leading" id="62P-zM-dtu"/>
+                            <constraint firstItem="uTf-OH-2Ps" firstAttribute="leading" secondItem="1ly-M6-eNm" secondAttribute="leading" id="Hf7-Xs-VGQ"/>
                             <constraint firstItem="1b0-J0-yjb" firstAttribute="width" secondItem="gbX-Y4-jzu" secondAttribute="width" multiplier="0.5" id="JSr-Oo-v8N"/>
                             <constraint firstItem="gbX-Y4-jzu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Lzy-j3-HWI"/>
-                            <constraint firstItem="1b0-J0-yjb" firstAttribute="top" secondItem="gbX-Y4-jzu" secondAttribute="bottom" constant="30" id="Nwf-z6-hT9"/>
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="QbN-FE-ZjU"/>
                             <constraint firstItem="gbX-Y4-jzu" firstAttribute="leading" secondItem="1ly-M6-eNm" secondAttribute="leading" id="SSD-SA-yyi"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="top" secondItem="nVF-Hz-CEb" secondAttribute="bottom" constant="8" id="Xiz-rI-VtE"/>
+                            <constraint firstItem="1b0-J0-yjb" firstAttribute="top" secondItem="gbX-Y4-jzu" secondAttribute="bottom" constant="15" id="eFQ-KT-mdb"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="width" secondItem="nVF-Hz-CEb" secondAttribute="width" id="hlB-1n-lBG"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="leading" secondItem="nVF-Hz-CEb" secondAttribute="leading" id="nAP-MJ-dTP"/>
+                            <constraint firstItem="uTf-OH-2Ps" firstAttribute="trailing" secondItem="1b0-J0-yjb" secondAttribute="trailing" id="odW-6L-I7o"/>
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="pan-ac-QrX"/>
                             <constraint firstItem="gbX-Y4-jzu" firstAttribute="width" secondItem="1ly-M6-eNm" secondAttribute="width" multiplier="0.5" id="u3f-5S-NR6"/>
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ul8-ia-Pdo"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pauseButton" destination="1b0-J0-yjb" id="Iab-66-f5p"/>
+                        <outlet property="playPauseButton" destination="1b0-J0-yjb" id="dep-8W-9Jl"/>
                         <outlet property="positionSlider" destination="1ly-M6-eNm" id="0OK-18-jMa"/>
                         <outlet property="videoContainer" destination="nVF-Hz-CEb" id="tPh-Fs-BpL"/>
                     </connections>

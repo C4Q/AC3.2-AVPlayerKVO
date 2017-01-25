@@ -12,15 +12,18 @@ import AVFoundation
 private var kvoContext = 0
 
 class ViewController: UIViewController {
+    
     var player: AVPlayer!
+    var userPlayRate: Float = 1.0
+    var userPlaying: Bool = false
     
     @IBOutlet weak var videoContainer: UIView!
     @IBOutlet weak var positionSlider: UISlider!
-    @IBOutlet weak var pauseButton: UIButton!
+    @IBOutlet weak var playPauseButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if let url = URL(string: "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8") {
             let playerItem = AVPlayerItem(url: url)
             
@@ -66,7 +69,7 @@ class ViewController: UIViewController {
             if keyPath == "status",
                 let item = object as? AVPlayerItem {
                 if item.status == .readyToPlay {
-                    player.play()
+                    playPauseButton.isEnabled = true
                 }
             }
         }
@@ -75,7 +78,7 @@ class ViewController: UIViewController {
     // MARK: - Actions
     @IBAction func positionSliderChanged(_ sender: UISlider) {
         guard let item = player.currentItem else { return }
-
+        
         let newPosition = Double(sender.value) * item.duration.seconds
         
         player.seek(to: CMTime(seconds: newPosition, preferredTimescale: 1000))
@@ -83,24 +86,30 @@ class ViewController: UIViewController {
     
     @IBAction func rateChanged(_ sender: UISlider) {
         guard let item = player.currentItem else { return }
+        userPlayRate = sender.value
+        
         if item.canPlayFastForward {
-            print("I can fast forward, rate requested: \(sender.value)")
+            print("I can fast forward, rate requested: \(userPlayRate)")
         }
         if item.canPlaySlowForward {
-            print("I can slow forward, rate requested: \(sender.value)")
+            print("I can slow forward, rate requested: \(userPlayRate)")
         }
-        player.rate = sender.value
-        print("NEW rate: \(player.rate)")
+        if userPlaying {
+            player.rate = userPlayRate
+            print("NEW rate: \(player.rate)")
+        }
     }
     
     @IBAction func pauseButtonPressed(_ sender: UIButton) {
-        if player.rate != 0 {
+        if userPlaying {
             player.pause()
-            pauseButton.setTitle("Play", for: .normal)
+            sender.setTitle("Play", for: .normal)
         } else {
-            player.play()
-            pauseButton.setTitle("Pause", for: .normal)
+            player.playImmediately(atRate: userPlayRate)
+            sender.setTitle("Pause", for: .normal)
+            print("Playing back the Playrate captured: \(userPlayRate)")
         }
+        userPlaying = !userPlaying
     }
 }
 
