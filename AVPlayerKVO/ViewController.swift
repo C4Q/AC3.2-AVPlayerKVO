@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var videoContainer: UIView!
     @IBOutlet weak var positionSlider: UISlider!
+    @IBOutlet weak var pauseButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -77,6 +79,28 @@ class ViewController: UIViewController {
         let newPosition = Double(sender.value) * item.duration.seconds
         
         player.seek(to: CMTime(seconds: newPosition, preferredTimescale: 1000))
+    }
+    
+    @IBAction func rateChanged(_ sender: UISlider) {
+        guard let item = player.currentItem else { return }
+        if item.canPlayFastForward {
+            print("I can fast forward, rate requested: \(sender.value)")
+        }
+        if item.canPlaySlowForward {
+            print("I can slow forward, rate requested: \(sender.value)")
+        }
+        player.rate = sender.value
+        print("NEW rate: \(player.rate)")
+    }
+    
+    @IBAction func pauseButtonPressed(_ sender: UIButton) {
+        if player.rate != 0 {
+            player.pause()
+            pauseButton.setTitle("Play", for: .normal)
+        } else {
+            player.play()
+            pauseButton.setTitle("Pause", for: .normal)
+        }
     }
 }
 
