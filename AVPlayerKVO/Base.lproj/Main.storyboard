@@ -26,11 +26,21 @@
                                     <constraint firstAttribute="width" secondItem="nVF-Hz-CEb" secondAttribute="height" multiplier="16:9" id="zDI-vy-FYH"/>
                                 </constraints>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1ly-M6-eNm">
+                            <slider opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1ly-M6-eNm">
                                 <connections>
                                     <action selector="positionSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="OeS-tp-hLM"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plQ-sx-TLR">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hV5-jZ-BTI">
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="gbX-Y4-jzu">
                                 <connections>
                                     <action selector="rateChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="T2j-XH-myY"/>
@@ -51,26 +61,32 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gbX-Y4-jzu" firstAttribute="top" secondItem="uTf-OH-2Ps" secondAttribute="bottom" constant="15" id="0DL-NT-gbY"/>
+                            <constraint firstItem="gbX-Y4-jzu" firstAttribute="top" secondItem="uTf-OH-2Ps" secondAttribute="bottom" constant="20" id="0DL-NT-gbY"/>
+                            <constraint firstItem="hV5-jZ-BTI" firstAttribute="top" secondItem="plQ-sx-TLR" secondAttribute="bottom" constant="8" id="3ZU-Wz-ow7"/>
                             <constraint firstItem="1b0-J0-yjb" firstAttribute="leading" secondItem="gbX-Y4-jzu" secondAttribute="leading" id="62P-zM-dtu"/>
                             <constraint firstItem="uTf-OH-2Ps" firstAttribute="leading" secondItem="1ly-M6-eNm" secondAttribute="leading" id="Hf7-Xs-VGQ"/>
                             <constraint firstItem="1b0-J0-yjb" firstAttribute="width" secondItem="gbX-Y4-jzu" secondAttribute="width" multiplier="0.5" id="JSr-Oo-v8N"/>
                             <constraint firstItem="gbX-Y4-jzu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Lzy-j3-HWI"/>
+                            <constraint firstItem="plQ-sx-TLR" firstAttribute="top" secondItem="1ly-M6-eNm" secondAttribute="bottom" constant="8" id="ONT-1C-zCS"/>
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="39" id="QbN-FE-ZjU"/>
                             <constraint firstItem="gbX-Y4-jzu" firstAttribute="leading" secondItem="1ly-M6-eNm" secondAttribute="leading" id="SSD-SA-yyi"/>
+                            <constraint firstItem="plQ-sx-TLR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W2e-vW-a4X"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="top" secondItem="nVF-Hz-CEb" secondAttribute="bottom" constant="8" id="Xiz-rI-VtE"/>
-                            <constraint firstItem="1b0-J0-yjb" firstAttribute="top" secondItem="gbX-Y4-jzu" secondAttribute="bottom" constant="15" id="eFQ-KT-mdb"/>
+                            <constraint firstItem="hV5-jZ-BTI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YVD-fY-cRU"/>
+                            <constraint firstItem="1b0-J0-yjb" firstAttribute="top" secondItem="gbX-Y4-jzu" secondAttribute="bottom" constant="20" id="eFQ-KT-mdb"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="width" secondItem="nVF-Hz-CEb" secondAttribute="width" id="hlB-1n-lBG"/>
+                            <constraint firstItem="uTf-OH-2Ps" firstAttribute="top" secondItem="1ly-M6-eNm" secondAttribute="bottom" constant="20" id="kPb-cG-MaE"/>
                             <constraint firstItem="1ly-M6-eNm" firstAttribute="leading" secondItem="nVF-Hz-CEb" secondAttribute="leading" id="nAP-MJ-dTP"/>
-                            <constraint firstItem="uTf-OH-2Ps" firstAttribute="trailing" secondItem="1b0-J0-yjb" secondAttribute="trailing" id="odW-6L-I7o"/>
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="pan-ac-QrX"/>
                             <constraint firstItem="gbX-Y4-jzu" firstAttribute="width" secondItem="1ly-M6-eNm" secondAttribute="width" multiplier="0.5" id="u3f-5S-NR6"/>
                             <constraint firstItem="nVF-Hz-CEb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ul8-ia-Pdo"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentTime" destination="plQ-sx-TLR" id="05R-on-h2n"/>
                         <outlet property="playPauseButton" destination="1b0-J0-yjb" id="dep-8W-9Jl"/>
                         <outlet property="positionSlider" destination="1ly-M6-eNm" id="0OK-18-jMa"/>
+                        <outlet property="totalDuration" destination="hV5-jZ-BTI" id="mdR-cy-YJO"/>
                         <outlet property="videoContainer" destination="nVF-Hz-CEb" id="tPh-Fs-BpL"/>
                     </connections>
                 </viewController>
